@@ -40,7 +40,7 @@ const Header = ({ toggleSider, isSiderOpen = true }: Props) => {
         <form className="hidden lg:block">
           <ComboSearchInput
             className="bg-muted border-none"
-            openClassName={"top-[132.5px] z-10"}
+            openClassName={"top-[95.8px] z-10"}
           />
         </form>
       </div>

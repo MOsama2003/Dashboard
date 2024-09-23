@@ -95,25 +95,25 @@ const ComboSearchInput = ({
     <div ref={comboBoxRef}>
       <Command
         className={cn(
-          "relative rounded-lg border",
+          "relative rounded-lg border shadow-sm",
           className,
           isOpen ? openClassName : ""
         )}
       >
         <CommandInput
           placeholder="Type here to search..."
-          className="h-9"
+          className="h-9 shadow-none "
           onFocus={openDropdown}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         {isOpen && (
-          <CommandList className="lg:h-[265px]">
+          <CommandList>
             {!hasResults ? (
               <CommandEmpty>No results found.</CommandEmpty>
             ) : (
               <CommandGroup>
                 {filteredOptions.map((item) => (
-                  <div key={item.label}>
+                  <div className="p-0 bg-white dark:bg-gray-700" key={item.label}>
                     <CommandItem>
                       <Link
                         className="w-full h-6"

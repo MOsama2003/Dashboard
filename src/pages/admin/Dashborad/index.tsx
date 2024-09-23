@@ -9,7 +9,7 @@ import { BarChartDashboard } from "./BarChart";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col gap-5 w-full">
+    <div className="flex flex-col gap-6 w-full">
       <div className="flex justify-between max-w-full">
         <div className="flex flex-col gap-1">
           <h1 className="text-xl font-semibold">Overview</h1>
@@ -24,13 +24,13 @@ const Dashboard = () => {
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         {cardData.map((item, index) => (
           <CardData {...item} key={index} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[320px] gap-4 lg:gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[320px] gap-4 lg:gap-6">
         <div className="col-span-1 lg:col-span-2 rounded-2xl bg-white p-1 dark:bg-black">
           <AreaChartDashboard
             title="Total Revenue"
@@ -42,7 +42,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[250px] gap-4 lg:gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[250px] gap-4 lg:gap-6">
         <div className="col-span-1 rounded-2xl bg-white p-4 dark:bg-black">
           <Requests />
         </div>

@@ -53,6 +53,7 @@ const Login = () => {
                 <FormInput
                   label="Password"
                   name="password"
+                  placeholder="********"
                   control={form.control}
                   secureTextEntry
                   isRequired

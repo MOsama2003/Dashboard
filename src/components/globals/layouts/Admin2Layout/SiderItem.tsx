@@ -1,5 +1,12 @@
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+ 
 
 type Props = {
   label: string;
@@ -21,8 +28,17 @@ const SiderItem = ({ label, icon, link }: Props) => {
         }
       )}
     >
+      <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
       {icon}
       <div className="mt-1 text-xs">{label}</div>
+      </TooltipTrigger>
+      <TooltipContent>
+          <p>{label}</p>
+      </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
     </Link>
   );
 };
