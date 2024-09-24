@@ -6,22 +6,21 @@ import Requests from "./Requests";
 import { PieChart } from "./PieChart";
 import { AreaChartDashboard } from "./AreaChart";
 import { BarChartDashboard } from "./BarChart";
+import { ExportOptions } from "./ExportDropdown";
 
 const Dashboard = () => {
   return (
     <div className="flex flex-col gap-6 w-full">
       <div className="flex justify-between max-w-full">
         <div className="flex flex-col gap-1">
-          <h1 className="text-xl font-semibold">Overview</h1>
+          <h1 className="text-xl font-semibold">
+            Overview
+          </h1>
           <p className="text-gray-400 font-medium text-sm">
             Get your latest update for the last 7 days
           </p>
         </div>
-        <Button className="mt-3 md:mt-0 flex gap-1 px-2 rounded-xl text-sm bg-primaryThemeColor">
-          <Download className="h-4" />
-          Export
-          <ChevronDown className="h-4" />
-        </Button>
+        <ExportOptions/>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">

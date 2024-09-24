@@ -10,6 +10,7 @@ import {
 import { useBearStore } from "@/store";
 import { AuthState } from "@/types/state-types";
 import APP_IMAGES from "@/constants/images";
+
 interface Props {}
 
 const HeaderMenu: React.FC<Props> = () => {
@@ -20,6 +21,7 @@ const HeaderMenu: React.FC<Props> = () => {
   const onLogout = () => {
     setIsAuth(false);
   };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -27,17 +29,17 @@ const HeaderMenu: React.FC<Props> = () => {
           size="icon"
           className="flex rounded-lg justify-between bg-muted text-gray-900 min-h-8 px-2 md:w-full"
         >
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
             <img
               src={APP_IMAGES.MAN}
               alt="profile-picture"
-              className="rounded-full w-7 h-7"
+              className="rounded-full w-8 h-8 object-cover border border-gray-300 dark:border-gray-600"
             />
             <span className="text-xs font-medium px-2 dark:text-gray-50 hidden lg:block">
               Hello Smith
             </span>
           </div>
-          <div className="rounded-sm items-center h-7 font-normal text-xs bg-white px-1 text-gray-500 dark:bg-black hidden dark:text-gray-50 lg:flex">
+          <div className="rounded-sm items-center h-7 font-normal text-xs bg-white px-2 text-gray-500 dark:bg-black dark:text-gray-50 hidden lg:flex">
             28-Sep
           </div>
         </Button>

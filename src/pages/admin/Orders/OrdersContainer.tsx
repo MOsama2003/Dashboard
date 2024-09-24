@@ -198,7 +198,6 @@ export const useOrderForm = ({ formState, data, onClose }: OrdersFormProps) => {
   const isEditForm = Boolean(data);
 
   const onSubmitCreate = (values) => {
-    // call the create order api
     toast("Order has been created", {
       description: `${values.username} has been created successfully.`,
       important: true,
@@ -210,14 +209,9 @@ export const useOrderForm = ({ formState, data, onClose }: OrdersFormProps) => {
     formState.setFalse();
     form.reset({}, { keepValues: false });
     onClose();
-
-    // if (loading < 100) {
-    //   setLoading(loading + 10);
-    // }
   };
 
   const onSubmitUpdate = (values) => {
-    // call the update order api
     toast("Order has been updated", {
       description: `${values.username} has been updated successfully.`,
       important: true,

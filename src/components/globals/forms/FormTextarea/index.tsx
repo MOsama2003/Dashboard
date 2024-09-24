@@ -25,7 +25,7 @@ const FormTextarea = ({ control, name, hint, placeholder, label }: Props) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="text-gray-900">{label}</FormLabel>
           <FormControl>
             <Textarea
               placeholder={placeholder}

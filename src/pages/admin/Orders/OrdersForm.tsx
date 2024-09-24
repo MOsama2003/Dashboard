@@ -26,20 +26,17 @@ const OrdersForm: React.FC<Props> = ({ formState, data, onClose }) => {
       <FormInput
         control={form.control}
         name="username"
-        hint="This will be your public username"
         label="Username"
         placeholder="Shadcn"
       />
       <FormPhoneInput
         control={form.control}
         name="phone"
-        hint="Enter your phone number"
         label="Phone"
       />
       <FormTextarea
         control={form.control}
         name="bio"
-        hint="Tell us about yourself in 160 characters or less."
         label="Bio"
         placeholder="I'm a software engineer who loves to code and build things."
       />

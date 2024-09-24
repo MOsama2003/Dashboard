@@ -48,7 +48,7 @@ const FormInput = ({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>
+          <FormLabel className="text-gray-900">
             {label}
             {isRequired && <span className="text-red-500">*</span>}
           </FormLabel>

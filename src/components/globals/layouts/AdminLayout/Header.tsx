@@ -6,6 +6,7 @@ import ComboSearchInput from "../../popovers/ComboSearchInput";
 import HeaderMenu from "./HeaderMenu";
 import SiderDrawer from "./SiderDrawer";
 import { Sun, Moon } from "lucide-react";
+import { NotificationButton } from "./Notification";
 
 type Props = {
   toggleSider: () => void;
@@ -14,10 +15,6 @@ type Props = {
 
 const Header = ({ toggleSider, isSiderOpen = true }: Props) => {
   const [theme, settheme] = useState("light");
-
-  const toggleTheme = () => {
-    settheme(theme === "light" ? "dark" : "light");
-  };
 
   useEffect(() => {
     if (theme === "dark") {
@@ -52,7 +49,7 @@ const Header = ({ toggleSider, isSiderOpen = true }: Props) => {
               "px-2 py-1 rounded-lg shadow-sm",
               theme === "dark" ? "text-gray-400" : "bg-white text-blue-600"
             )}
-            onClick={toggleTheme}
+            onClick={()=>settheme("light")}
           >
             <Sun className="w-4 h-4" />
           </button>
@@ -61,18 +58,13 @@ const Header = ({ toggleSider, isSiderOpen = true }: Props) => {
               "px-2 py-1 rounded-lg",
               theme === "light" ? "text-gray-400" : "bg-black text-blue-500"
             )}
-            onClick={toggleTheme}
+            onClick={()=>settheme("dark")}
           >
             <Moon className="w-4 h-4" />
           </button>
         </div>
 
-        <Button
-          variant="default"
-          className="p-2 bg-gray-100 text-gray-400 rounded-full dark:bg-gray-800"
-        >
-          <Bell className="w-5 h-5" />
-        </Button>
+        <NotificationButton/>
 
         <HeaderMenu />
       </div>

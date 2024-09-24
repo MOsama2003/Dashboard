@@ -29,13 +29,13 @@ export const menus = [
     label: "Transaction",
     tooltip: "Transaction",
     icon: <CircleDollarSign className="h-5 w-5" />,
-    link: "/admin/orders",
+    link: "/admin/rders",
   },
   {
     label: "Statistics",
     tooltip: "Statistics",
     icon: <BarChart className="h-5 w-5" />,
-    link: "/admin/orders",
+    link: "/admin/ordrs",
   },
   {
     label: "Exchange",
@@ -56,7 +56,7 @@ export const menu3 = [
     label: "Help Center",
     tooltip: "Help Center",
     icon: <HelpCircle className="h-5 w-5" />,
-    link: "/admin/orders",
+    link: "/admin/ordrs",
   },
 ]
 

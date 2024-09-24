@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/chart";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { MonthDropdown } from "./MonthDropDown";
 
 export const description = "A stacked bar chart with a legend";
 
@@ -43,7 +44,7 @@ export function BarChartDashboard({ title }) {
     <Card id="Item1" className="border-none shadow-none">
       <CardHeader className="flex w-full flex-row justify-between">
         <CardTitle className="text-xl">{title}</CardTitle>
-        <Button className="flex gap-1 px-2 rounded-lg text-sm bg-primaryThemeColor">Month <ChevronDown/></Button>
+        <MonthDropdown/>
       </CardHeader>
       <CardContent>
         <ChartContainer className="h-56 w-full" config={chartConfig}>

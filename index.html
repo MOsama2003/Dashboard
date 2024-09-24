@@ -14,11 +14,15 @@
       }
 
       .logo-image {
-        max-width: 300px;
+        width: 150px;
       }
 
       /* Loading Bar */
       .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         min-width: 350px;
         position: relative;
         margin: 280px auto;
@@ -83,7 +87,7 @@
       <div class="loading-indicator">
         <div style="display: flex; flex-direction: column; align-items: center">
           <div class="container">
-            <img class="logo-image" src="/loading-logo.png" alt="Loading..." />
+            <img class="logo-image" src="/logo.png" alt="Loading..." />
             <div class="Loading"></div>
           </div>
         </div>
