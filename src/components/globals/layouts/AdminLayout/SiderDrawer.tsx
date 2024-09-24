@@ -10,7 +10,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { menus } from "@/constants/menus"; // Assuming `menus` contains the menu items with paths
 
 interface Props {
   toggleSider: () => void;
@@ -18,6 +19,8 @@ interface Props {
 }
 
 const SiderDrawer: React.FC<Props> = ({ toggleSider, isSiderOpen }) => {
+  const { pathname } = useLocation();
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -27,63 +30,25 @@ const SiderDrawer: React.FC<Props> = ({ toggleSider, isSiderOpen }) => {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="flex flex-col">
-        <nav className="grid gap-2 text-lg font-medium">
-          <Link
-            to="/admin/dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground text-base hover:text-foreground"
-          >
-            <LayoutGrid className="h-5 w-5" />
-            Overview
-          </Link>
-          <Link
-            to="/admin/orders"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-base text-foreground hover:text-foreground"
-          >
-            <ReceiptText className="h-5 w-5" />
-            Invoices
-          </Link>
-          <Link
-            to="/admin/dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground"
-          >
-            <CreditCard className="h-5 w-5" />
-            Crypto
-          </Link>
-          <Link
-            to="/admin/orders"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground"
-          >
-            <CreditCard className="h-5 w-5" />
-            Cards
-          </Link>
-          <Link
-            to="/admin/dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground"
-          >
-            <CircleDollarSign className="h-5 w-5" />
-            Transaction
-          </Link>
-          <Link
-            to="/admin/dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground"
-          >
-            <BarChart className="h-5 w-5" />
-            Statistics
-          </Link>
-          <Link
-            to="/admin/dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground"
-          >
-            <SwitchCamera className="h-5 w-5" />
-            Exchange
-          </Link>
-          <Link
-            to="/admin/dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground"
-          >
-            <Settings className="h-5 w-5" />
-            Settings
-          </Link>
+        <nav className="grid gap-2 text-lg font-medium mt-4">
+          {menus.map((item, index) => {
+            const isActive = pathname === item.link;
+            const activeClassName =
+              "mx-[-2px] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-base text-foreground hover:text-foreground";
+            const inactiveClassName =
+              "mx-[-2px] flex items-center gap-4 rounded-xl px-3 py-2 text-base text-muted-foreground hover:text-foreground";
+
+            return (
+              <Link
+                key={index}
+                to={item.link}
+                className={isActive ? activeClassName : inactiveClassName}
+              >
+                {item.icon}
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       </SheetContent>
     </Sheet>

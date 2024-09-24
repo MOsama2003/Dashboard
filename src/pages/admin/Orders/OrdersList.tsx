@@ -12,7 +12,6 @@ const OrdersList: React.FC<Props> = ({ onDelete, onEdit }) => {
     onDelete,
     onEdit,
   });
-  console.log(query,"queryqueryquery")
   return (
     <div className="w-full">
       <DataTable
